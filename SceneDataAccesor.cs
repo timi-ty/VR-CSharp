@@ -16,7 +16,9 @@ public class SceneDataAccesor
     }
     public DataObject GetSceneData(string sceneName, int progressIdx)
     {
-        return dict.GetValueOrDefault(sceneName)[progressIdx];
+        DataObject[] outData;
+        dict.TryGetValue(sceneName, out outData);
+        return outData[progressIdx];
     }
 
     static void Main(string[] args)
