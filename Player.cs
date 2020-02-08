@@ -65,6 +65,12 @@ public class Player : MonoBehaviour
             questionBoard.SetActive(false);
             progress++;
             Time.timeScale = 1;
+
+
+            if(SceneDataAccesor.previousScene != null &&
+                SceneDataAccesor.previousScene.Equals(SceneManager.GetActiveScene().name)){
+                SceneManager.LoadScene("Transition Scene");
+            }
         }
     }
 
