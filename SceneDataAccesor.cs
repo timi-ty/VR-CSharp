@@ -34,7 +34,7 @@ public class SceneDataAccesor
         antiqueObjects[2].successExplanation = "Good choice. You should not use social media to purchase cultural antiquities because according to United Nations Office on Drugs and Crime(UNODC), money generated from the illicit trade of cultural antiquities is a possible source of financing for terrorist groups. Let’s see what happens if you made the wrong choice";
 
 
-        DataObject[] policeBrutalityObjects = new DataObject[5];
+        DataObject[] policeBrutalityObjects = new DataObject[4];
         policeBrutalityObjects[0] = new DataObject();
         policeBrutalityObjects[0].question = "A police car is behind, flagging you to stop.";
         policeBrutalityObjects[0].option1 = "Come to a slow stop.";
