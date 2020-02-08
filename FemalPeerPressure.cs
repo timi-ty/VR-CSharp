@@ -8,9 +8,9 @@ public class FemalPeerPressure : MonoBehaviour
     void Start()
     {
         Invoke("ConversationPrompt", 3);
-        Invoke("ConversationPrompt", 10);
-        Invoke("ConversationPrompt", 18);
-        Invoke("ConversationPrompt", 28);
+        Invoke("ConversationPrompt", 6);
+        Invoke("ConversationPrompt", 9);
+        Invoke("ConversationPrompt", 12);
     }
 
     void ConversationPrompt(){

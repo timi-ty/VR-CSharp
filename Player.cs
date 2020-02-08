@@ -55,36 +55,23 @@ public class Player : MonoBehaviour
     }
 
     public void pickOptionOne(){
-        switch(progress){
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                questionBoard.SetActive(false);
-                Time.timeScale = 1;
-                progress++;
-                break;
+        if(!option1Text.GetParsedText().Equals("Continue")){
+            option2.gameObject.SetActive(false);
+            question.SetText(sceneData.GetSceneData(sceneName, progress).successExplanation);
+
+            option1Text.SetText("Continue");
+        }
+        else{
+            questionBoard.SetActive(false);
+            progress++;
+            Time.timeScale = 1;
         }
     }
 
     public void pickOptionTwo(){
-        switch(progress){
-            case 0:
-                option2.gameObject.SetActive(false);
-                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
-                break;
-            case 1:
-                option2.gameObject.SetActive(false);
-                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
-                break;
-            case 2:
-                option2.gameObject.SetActive(false);
-                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
-                break;
-            case 3:
-                option2.gameObject.SetActive(false);
-                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
-                break;
-        }
+        option2.gameObject.SetActive(false);
+        question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
+
+        option1Text.SetText("Continue");
     }
 }
