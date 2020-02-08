@@ -11,7 +11,7 @@ public class SceneDataAccesor
     private Dictionary<string, DataObject[]> dict = new Dictionary<string, DataObject[]>();
     public SceneDataAccesor()
     {
-        DataObject[] antiqueObjects = new DataObject[4];
+        DataObject[] antiqueObjects = new DataObject[3];
         antiqueObjects[0] = new DataObject();
         antiqueObjects[0].question = "Hey, I heard about your parent’s anniversary";
         antiqueObjects[0].option1 = "Yes, I’m looking forward to it";
@@ -32,10 +32,6 @@ public class SceneDataAccesor
         antiqueObjects[2].option2 = "Sure, I’m in";
         antiqueObjects[2].failureExplanation = "You should not buy controlled goods on social media. According to Antiquities Trafficking and Heritage Anthropology Research(ATHAR), groups on facebook that support the trade oxf illicit cultural antiquities usually consist of violent extremists affiliated with terrorists groups";
         antiqueObjects[2].successExplanation = "Good choice. You should not use social media to purchase cultural antiquities because according to United Nations Office on Drugs and Crime(UNODC), money generated from the illicit trade of cultural antiquities is a possible source of financing for terrorist groups. Let’s see what happens if you made the wrong choice";
-
-        antiqueObjects[3] = new DataObject();
-        antiqueObjects[3].question = "You purchase the tusks online and go to pick them up at the post office. On your way back from the post office, you are flagged down by a police officer.";
-        antiqueObjects[3].option1 = "Continue";
 
 
         DataObject[] policeBrutalityObjects = new DataObject[5];
