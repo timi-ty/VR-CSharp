@@ -11,7 +11,13 @@ public class SceneDataAccesor
     public SceneDataAccesor()
     {
         DataObject[] antiqueObjects = new DataObject[1];
-        antiqueObjects[0] = new DataObject("Hey, friend I heard about your parent’s anniversary.", "Ok", "Ok!!!", "halalalala", "failure !");
+        antiqueObjects[0] = new DataObject();
+        antiqueObjects[0].question = "";
+        antiqueObjects[0].option1 = "";
+        antiqueObjects[0].option2 = "";
+        antiqueObjects[0].failureExplanation = "";
+        antiqueObjects[0].successExplanation = "!!!!";
+
         dict.Add("C-Antique", antiqueObjects);
     }
     public DataObject GetSceneData(string sceneName, int progressIdx)
@@ -24,6 +30,6 @@ public class SceneDataAccesor
     static void Main(string[] args)
     {
         SceneDataAccesor accesor1 = new SceneDataAccesor();
-        accesor1.GetSceneData("C-Antique", 0);
+        Console.WriteLine(accesor1.GetSceneData("C-Antique", 0).successExplanation);
     }
 }

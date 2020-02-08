@@ -24,4 +24,8 @@ public class DataObject
         this.successExplanation = successExplanation;
         this.failureExplanation = failureExplanation;
     }
+    public DataObject()
+    {
+
+    }
 }
