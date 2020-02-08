@@ -58,18 +58,11 @@ public class SceneDataAccesor
         policeBrutalityObjects[2].successExplanation = "Good choice. The police have the right to search your property, however this search can only be performed if a search warrant has been issued. If the police officer does not have a warrant to search your phone or laptop or other electronic device then any search carried out is an illegal one.";
 
         policeBrutalityObjects[3] = new DataObject();
-        policeBrutalityObjects[3].question = "Get down! I need to search your car!";
+        policeBrutalityObjects[3].question = "The officer then proceeds to check your car. He then finds the elephant tusks and ancient Egyptian writing in your trunk. You are mauled to the ground and handcuffed.";
         policeBrutalityObjects[3].option1 = "Comply with the officer ";
-        policeBrutalityObjects[3].option2 = "Refuse";
-        policeBrutalityObjects[3].failureExplanation = "Bad Choice. making a break for it could result in a police chase and a charge for disorderly conduct when caught. In extreme cases, shots may be fired at your car.";
-        policeBrutalityObjects[3].successExplanation = "Good choice. The police have the right to search your property, however this search can only be performed if a search warrant has been issued. If the police officer does not have a warrant to search your phone or laptop or other electronic device then any search carried out is an illegal one.";
-
-        policeBrutalityObjects[4] = new DataObject();
-        policeBrutalityObjects[4].question = "The officer then proceeds to check your car. He then finds the elephant tusks and ancient Egyptian writing in your trunk. You are mauled to the ground and handcuffed.";
-        policeBrutalityObjects[4].option1 = "Comply with the officer ";
-        policeBrutalityObjects[4].option2 = "Fightback";
-        policeBrutalityObjects[4].failureExplanation = "Bad Choice, Fighting with an officer can get fatal. It is strongly discouraged";
-        policeBrutalityObjects[4].successExplanation = "Good choice, Complying with the police is the safest way to avoid brutalization. Since the search was an illegal one, you can always hire a lawyer later to make a complaint and instigate a suit to claim compensation for unlawful search and harassment.";
+        policeBrutalityObjects[3].option2 = "Fightback";
+        policeBrutalityObjects[3].failureExplanation = "Bad Choice, Fighting with an officer can get fatal. It is strongly discouraged";
+        policeBrutalityObjects[3].successExplanation = "Good choice, Complying with the police is the safest way to avoid brutalization. Since the search was an illegal one, you can always hire a lawyer later to make a complaint and instigate a suit to claim compensation for unlawful search and harassment.";
 
 
         dict.Add("Cultural Antiques", antiqueObjects);
