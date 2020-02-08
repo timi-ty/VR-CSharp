@@ -37,7 +37,7 @@ public class SceneDataAccesor
         antiqueObjects[3].option1 = "Continue";
 
 
-        dict.Add("C-Antique", antiqueObjects);
+        dict.Add("Cultural Antiques", antiqueObjects);
     }
     public DataObject GetSceneData(string sceneName, int progressIdx)
     {
@@ -48,7 +48,7 @@ public class SceneDataAccesor
 
     static void Main(string[] args)
     {
-        SceneDataAccesor accesor1 = new SceneDataAccesor();
-        Console.WriteLine(accesor1.GetSceneData("C-Antique", 0).successExplanation);
+        // SceneDataAccesor accesor1 = new SceneDataAccesor();
+        // Console.WriteLine(accesor1.GetSceneData("C-Antique", 0).successExplanation);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
     Button option1;
     Button option2;
     int progress;
+    SceneDataAccesor sceneData;
+    string sceneName;
     void Start()
     {
         question = questionBoard.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -21,6 +24,12 @@ public class Player : MonoBehaviour
         option1Text = option1.GetComponentInChildren<TextMeshProUGUI>();
         option2Text = option2.GetComponentInChildren<TextMeshProUGUI>();
         questionBoard.SetActive(false);
+
+        sceneData = new SceneDataAccesor();
+        if(sceneData == null){
+            throw new UnityException("The scene name must be present in scene data");
+        }
+        sceneName = SceneManager.GetActiveScene().name;
     }
 
     public void WaitForQuestion(){
@@ -36,18 +45,9 @@ public class Player : MonoBehaviour
     }
 
     void NextQuestion(){
-        switch(progress){
-            case 0:
-                question.SetText("A police car behind you is flagging you down. What are you going to do?");
-                option1Text.SetText("Pull Over Slowly");
-                option2Text.SetText("Keep Driving");
-                break;
-            case 1:
-                question.SetText("The police man is approaching to talk to you, what next?");
-                option1Text.SetText("Wait Patiently");
-                option2Text.SetText("Make a Break For It");
-                break;
-        }
+        question.SetText(sceneData.GetSceneData(sceneName, progress).question);
+        option1Text.SetText(sceneData.GetSceneData(sceneName, progress).option1);
+        option2Text.SetText(sceneData.GetSceneData(sceneName, progress).option2);
     }
     void Update()
     {
@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
         switch(progress){
             case 0:
             case 1:
+            case 2:
+            case 3:
                 questionBoard.SetActive(false);
                 Time.timeScale = 1;
                 progress++;
@@ -69,12 +71,20 @@ public class Player : MonoBehaviour
         switch(progress){
             case 0:
                 option2.gameObject.SetActive(false);
-                question.SetText("Statistic about ignoring policemen");
+                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
                 break;
             case 1:
                 option2.gameObject.SetActive(false);
-                question.SetText("Repercussions of resistance");
-            break;
+                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
+                break;
+            case 2:
+                option2.gameObject.SetActive(false);
+                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
+                break;
+            case 3:
+                option2.gameObject.SetActive(false);
+                question.SetText(sceneData.GetSceneData(sceneName, progress).failureExplanation);
+                break;
         }
     }
 }
