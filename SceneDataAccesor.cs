@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 public class SceneDataAccesor
 {
+    public static string previousScene;
     private Dictionary<string, DataObject[]> dict = new Dictionary<string, DataObject[]>();
     public SceneDataAccesor()
     {
@@ -82,6 +83,9 @@ public class SceneDataAccesor
     {
         DataObject[] outData;
         dict.TryGetValue(sceneName, out outData);
+        if(progressIdx == outData.Length - 1){
+            SceneDataAccesor.previousScene = sceneName;
+        }
         return outData[progressIdx];
     }
 
