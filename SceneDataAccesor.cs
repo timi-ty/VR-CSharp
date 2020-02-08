@@ -37,8 +37,8 @@ public class SceneDataAccesor
         DataObject[] policeBrutalityObjects = new DataObject[5];
         policeBrutalityObjects[0] = new DataObject();
         policeBrutalityObjects[0].question = "A police car is behind, flagging you to stop.";
-        policeBrutalityObjects[0].option1 = "Keep moving and try to escape";
-        policeBrutalityObjects[0].option2 = "Come to a slow stop.";
+        policeBrutalityObjects[0].option1 = "Come to a slow stop.";
+        policeBrutalityObjects[0].option2 = "Keep moving and try to escape";
         policeBrutalityObjects[0].failureExplanation = "Wrong choice: In Nigeria, The Police Act in Section 29, states that a police officer ‘…may detain and search any person whom he reasonably suspects of having in his possession or conveying in any manner anything which he has reason to believe to have been stolen or otherwise unlawfully obtained.";
         policeBrutalityObjects[0].successExplanation = "Good choice, In Nigeria, the Police Act in Section 29, states that a police officer ‘…may detain and search any person whom he reasonably suspects of having in his possession or conveying in any manner anything which he has reason to believe to have been stolen or otherwise unlawfully obtained.";
 
@@ -79,7 +79,8 @@ public class SceneDataAccesor
     {
         DataObject[] outData;
         dict.TryGetValue(sceneName, out outData);
-        if(progressIdx == outData.Length - 1){
+        if (progressIdx == outData.Length - 1)
+        {
             SceneDataAccesor.previousScene = sceneName;
         }
         return outData[progressIdx];
