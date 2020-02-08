@@ -4,40 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DemoApplication2;
 
-namespace DemoApplication2
+public class SceneDataAccesor
 {
-    public class SceneDataAccesor
+    private Dictionary<string, DataObject[]> dict = new Dictionary<string, DataObject[]>();
+    public SceneDataAccesor()
     {
-        public SceneDataAccesor()
-        {
-            Console.WriteLine("Initialized ob!!!j");
-        }
-        public void GetSceneData(string sceneName)
-        {
-            Console.WriteLine(sceneName);
-        }
+        DataObject[] antiqueObjects = new DataObject[1];
+        antiqueObjects[0] = new DataObject("Hey, friend I heard about your parent’s anniversary.", "Ok", "Ok!!!", "halalalala", "failure !");
+        dict.Add("C-Antique", antiqueObjects);
+    }
+    public DataObject GetSceneData(string sceneName, int progressIdx)
+    {
+        return dict.GetValueOrDefault(sceneName)[progressIdx];
     }
 
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            SceneDataAccesor accesor1 = new SceneDataAccesor();
-            accesor1.GetSceneData("");
-            Hashtable ht = new Hashtable();
-            // ht.Add("001", ".Net");
-            // ht.Add("002", "C#");
-            // ht.Add("003", "ASP.Net");
-
-            // ICollection keys = ht.Keys;
-
-            // foreach (String k in keys)
-            // {
-            //     Console.WriteLine(ht[k]);
-            // }
-            // Console.ReadKey();
-        }
+        SceneDataAccesor accesor1 = new SceneDataAccesor();
+        accesor1.GetSceneData("C-Antique", 0);
     }
 }
