@@ -65,6 +65,11 @@ public class SceneDataAccesor
         policeBrutalityObjects[3].successExplanation = "Good choice, Complying with the police is the safest way to avoid brutalization. Since the search was an illegal one, you can always hire a lawyer later to make a complaint and instigate a suit to claim compensation for unlawful search and harassment.";
 
 
+        DataObject[] childAbuseObjects = new DataObject[1];
+
+        childAbuseObjects[0].question = "If you think you had a rough day, think about what those kids might be going through? ";
+        
+
         dict.Add("Cultural Antiques", antiqueObjects);
         dict.Add("Police Brutality", policeBrutalityObjects);
     }
