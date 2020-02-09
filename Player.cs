@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         questionBoard.SetActive(true);
         option1.gameObject.SetActive(true);
         option2.gameObject.SetActive(true);
-        questionBoard.transform.position = transform.position + (Camera.main.transform.forward * 20);
+        questionBoard.transform.position = transform.position + (Camera.main.transform.forward * 20) + Vector3.up;
         questionBoard.transform.rotation = Camera.main.transform.rotation;
         questionBoard.transform.localScale = new Vector3(-1, 1, 1);
 

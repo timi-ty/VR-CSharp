@@ -25,7 +25,7 @@ public class TransitionManager : MonoBehaviour
         questionBoard.SetActive(true);
         option1.gameObject.SetActive(true);
         option2.gameObject.SetActive(false);
-        questionBoard.transform.position = transform.position + (Camera.main.transform.forward * 20);
+        questionBoard.transform.position = transform.position + (Camera.main.transform.forward * 20) + Vector3.up;
         questionBoard.transform.rotation = Camera.main.transform.rotation;
         questionBoard.transform.localScale = new Vector3(-1, 1, 1);
 
@@ -34,7 +34,10 @@ public class TransitionManager : MonoBehaviour
                 question.SetText("You purchase the tusks online and go to pick them up at the post office. On your way back from the post office, you are flagged down by a police officer.");
                 option1Text.SetText("Continue");
                 break;
-
+            case "Police Brutality":
+                question.SetText("You end up at the station and you are charged with illegal possession of cultural antiquities. The goods in your car were confiscated and your parents come to bail you out.");
+                option1Text.SetText("Continue");
+                break;
         }
     }
 
@@ -43,7 +46,9 @@ public class TransitionManager : MonoBehaviour
             case "Cultural Antiques":
                 SceneManager.LoadScene("Police Brutality");
                 break;
-
+            case "Police Brutality":
+                SceneManager.LoadScene("Child Abuse");
+                break;
         }
     }
 
