@@ -1,2 +1,2 @@
 # VR-CSharp
-A lightweight demonstration of implementing Google Cardboard VR for an Android device using Unity
+A lightweight implementation of Google Cardboard VR to make an interactive app for an Android device using Unity
